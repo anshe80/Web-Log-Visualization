@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+        
+        <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+    </head>
+
+    <body class="gray-bg">
+<br><br>
+
+	 <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>IP总个数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">6</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>IP最大访问量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">1679</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>IP最小访问量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">175</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+
+        <div id="container" style="min-width:400px;height: 800px"></div>
+	
+        <script>
+        $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45
+                    }
+                },
+                title: {
+                    text: '按天统计IP访问量'
+                },
+                subtitle: {
+                    text: '2018-04-14'
+                },
+                plotOptions: {
+                    pie: {
+                        innerSize: 100,
+                        depth: 45
+                    }
+                },
+                series: [{
+                    name: 'IP统计',
+                    data: [
+                    
+                        ['192.168.211.1',	1679],
+                        ['192.168.211.150',342],
+                        ['192.168.211.154',280],
+                        ['127.0.0.1',276],
+                        ['192.168.211.152',191],
+                        ['192.168.211.153',175]
+                    ]
+                }]
+            });
+        });
+        </script>
+    </body>
+</html>

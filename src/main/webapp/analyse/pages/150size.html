@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+
+	 <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+<title>网页大小分析</title>
+</head>
+<body class="gray-bg">
+<br>
+<div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最大数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">5494553</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小平均数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">956795</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最小数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">18211</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+<div id="container" style="min-width:800px;height:900px"></div>
+
+<script >
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '用户某时间浏览网页大小热门分析'
+        },
+        xAxis: {
+            categories: ['11:52:10', '11:52:12', '11:52:13', '12:01:37', '12:01:54',
+            	'12:11:15', '12:11:20', '12:11:21', '12:11:26', '12:11:34',
+            	'13:15:50', '13:16:23', '16:00:37', '16:00:38', '16:00:39',
+            	'16:00:43', '16:00:54', '16:01:27', '16:01:37', '16:05:05',
+            	'16:05:06', '16:05:19', '16:05:21', '16:05:22', '16:05:27',
+            	'16:19:05', '16:24:02', '16:24:08', '16:26:01', '16:26:02',]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '页面率'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'red'
+                }
+            }
+        },
+        
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'yellow',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    '总量: ' + this.point.stackTotal;
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+        
+        series: [{
+            name: '192.168.211.150',
+            data: [459887,197687,1151827,459887,351148,602704,588330,2826560,
+            	999674,203231,34779,591216,1642837,772547,999506,908680,202812,
+            	34794,357762,18211,4809116,5494553,2399829,1004678,135453,34785,
+            	1000514,34794,24949,361100]
+        }]
+    });
+});
+
+</script>
+
+
+
+
+</body>
+</html>

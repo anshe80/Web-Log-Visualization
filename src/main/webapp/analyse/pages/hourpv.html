@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+
+	 <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+<title>操作系统分析</title>
+</head>
+<body class="gray-bg">
+<br><br><br><br>
+<div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>小时PV最大数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">59</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>小时PV平均数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members"> 23.56</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>小时PV最小数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">17</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+      
+      <div id="container" style="min-width:800px;height:650px"></div>
+
+        <script>
+		
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: '小时PV统计'
+            },
+            subtitle: {
+                text: '2018-04-14'
+            },
+            xAxis: {
+                categories: ['11:38:00', '11:38:43', '11:38:44', '11:42:38', '11:48:08', 
+                	'11:48:10', '11:48:47', '11:50:08', '11:50:09', '11:51:17', 
+                	'11:52:10', '11:58:42', '12:01:37', '12:07:48', '12:07:49',
+                	'12:08:17', '12:11:21', '12:16:36', '12:19:48', '12:19:49',
+                	'12:22:17', '12:22:18', '12:22:59', '12:23:57', '12:28:40',
+                	'12:29:13', '12:31:17', '12:32:04', '15:58:45', '16:00:37',
+                	'16:00:38', '16:01:49', '16:03:33', '16:05:06', '16:05:19', '16:05:21', '16:06:59',
+                	'16:10:26', '16:33:57', '16:35:21', '16:41:17', '16:41:18', '17:10:46', '18:26:32',
+                	'18:26:42', '18:26:43', '18:34:19', '18:34:23', '18:35:04', '22:31:52']
+            },
+            yAxis: {
+                title: {
+                    text: '访问率'
+                }
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true          // 开启数据标签
+                    },
+                    enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                }
+            },
+            series: [{
+                name: '小时PV分析',
+                data: [59,26,29,17,24,20,31,25,27,18,19,17,33,
+                	20,36,21,22,24,17,18,17,18,24,
+                	26,22,17,17,23,21,17,18,20,39,
+                	35,22,33,19,43,22,19,18,28,18,
+                	19,18,25,22,19]
+            }]
+        });
+
+        
+        </script>
+
+</body>
+</html>

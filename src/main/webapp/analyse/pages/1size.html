@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+
+	 <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+<title>网页大小分析</title>
+</head>
+<body class="gray-bg">
+<br>
+<div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最大数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">5046612</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小平均数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">2573395.4</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最小数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">1416618</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+
+<div id="container" style="min-width:800px;height:1000px"></div>
+		<script>
+		
+		$(function () {
+		    $('#container').highcharts({
+		        chart: {
+		            type: 'bar'
+		        },
+		        title: {
+		            text: '用户某时间浏览网页大小分析'
+		        },
+		        xAxis: {
+		            categories: ['11:38:43', '11:38:44', '11:42:41', '11:48:08', '11:48:47',
+		            	'12:07:49', '12:08:17', '12:08:18', '12:08:49', '12:22:12',
+		            	'12:22:19', '12:23:00', '16:17:12', '16:22:16', '16:35:21',
+		            	'16:40:10', '16:41:18', '16:46:50', '16:53:38', '16:53:52',
+		            	'17:00:01', '17:10:47', '17:26:55', '18:26:38', '18:26:42',
+		            	'18:34:20', '18:34:22', '18:35:04', '18:35:05', '22:32:50']
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: '数据来源:192.168.211.1'
+		            }
+		        },
+		        legend: {
+		            reversed: true
+		        },
+		        plotOptions: {
+		            series: {
+		                stacking: 'normal'
+		            }
+		        },
+		        series: [{
+		            name: '192.168.211.1',
+		            data: [1679458,2115597,2347398,1883884,1908235,2200253,2103469,4048192,2614936,
+		            	2181061,1458831,5046612,2220596,1998676,3540145,2998014,3256320,4538565,
+		            	2367506,2040730,1416618,2771016,3997942,1652979,1669319,2604345,1460915,
+		            	4034321,2047914,2998014]
+		        }]
+		    });
+		});
+		
+		</script>
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+
+	 <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+<title>网页大小分析</title>
+</head>
+<body class="gray-bg">
+<br>
+<div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最大数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">1648705</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小平均数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">271845.1</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最小数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">1008</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+<div id="container" style="min-width:900px;height:900px"></div>
+<div id="container"></div>
+<button id="plain">普通</button>
+<button id="inverted">反转</button>
+<button id="polar">极地图</button>
+<script>
+
+$(function () {
+    var chart = Highcharts.chart('container', {
+        title: {
+            text: '用户某时间浏览网页大小热门分析'
+        },
+        subtitle: {
+            text: '普通的'
+        },
+        xAxis: {
+            categories: ['12:28:30', '12:28:38', '12:28:39', '12:28:40', '12:28:41',  
+            	'12:28:42', '12:28:50', '12:31:25', '12:33:33', '12:33:40',
+            	'12:33:44', '12:34:55', '12:35:38', '16:04:18', '16:04:33',
+            	'16:33:19', '16:33:25', '16:33:57', '16:34:13', '16:38:53',
+            	'16:39:00', '16:39:06', '16:39:17', '16:39:18', '17:07:15',
+            	'17:07:16', '17:07:23', '17:07:32', '17:07:47', '22:43:44']
+        },
+        series: [{
+            type: 'column',
+            colorByPoint: true,
+            data: [2391,54880,6940,1648705,533236,548404,999506,2391,6049,
+            	905783,10704,209039,34794,34795,33109,1008,34779,1036307,
+            	34785,385881,33126,33878,1013152,355016,18451,42431,33122,33127,34770,34794],
+            showInLegend: false
+        }]
+    });
+    $('#plain').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: false
+            },
+            subtitle: {
+                text: '普通的'
+            }
+        });
+    });
+    $('#inverted').click(function () {
+        // chart.update 支持全部属性动态更新
+        chart.update({
+            chart: {
+                inverted: true,
+                polar: false
+            },
+            subtitle: {
+                text: '反转'
+            }
+        });
+    });
+    $('#polar').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: true
+            },
+            subtitle: {
+                text: '极地图'
+            }
+        });
+    });
+});
+</script>
+
+
+</body>
+</html>

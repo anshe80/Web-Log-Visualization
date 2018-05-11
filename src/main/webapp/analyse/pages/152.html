@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/variwide.js"></script>
+
+	 <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+<title>网页大小分析</title>
+</head>
+<body class="gray-bg">
+<br>
+<div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最大数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">1366798</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小平均数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">354385.7</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最小数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">3463</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+<div id="container" style="min-width:800px;height:900px"></div>
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'variwide'
+    },
+    title: {
+        text: '用户某时间浏览网页大小热门分析'
+    },
+    subtitle: {
+        text: '数据来源：192.168.211.152'
+    },
+    xAxis: {
+        type: 'category',
+        title: {
+            text: '192.168.211.152'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    series: [{
+        name: '页面大小',
+        data: [
+            ['12:31:14', 12,54880],
+            ['12:31:15', 12,632991],
+            ['12:31:16', 12,1187670],
+            ['12:31:17', 12,916792],
+            ['12:31:23', 12,999506],
+            ['12:34:01', 12,209030],
+            ['16:01:49', 16,386049],
+            ['16:01:53', 16,213371],
+            ['16:02:21', 16,21505],
+            ['16:02:22', 16,1346663],
+            ['16:02:58', 16,14863],
+            ['16:03:33', 16,883818],
+            ['16:03:39', 16,492203],
+            ['16:17:38', 16,244615],
+            ['16:17:44', 16,33127],
+            ['16:17:58', 16,34780],
+            ['16:18:09', 16,34794],
+            ['16:18:20', 16,34785],
+            ['16:18:23', 16,1366798],
+            ['16:18:38', 16,11488],
+            ['16:18:39', 16,3463],
+            ['16:25:45', 16,31635],
+            ['16:25:50', 16,104205],
+            ['16:47:09', 16,24744],
+            ['16:47:23', 16,34780],
+            ['22:16:45', 22,357762],
+            ['22:16:58', 22,6049],
+            ['22:17:04', 22,905783],
+            ['22:17:07', 22,8627],
+            ['22:17:29', 22,34794]
+        ],
+        dataLabels: {
+            enabled: true,
+            format: '{point.y:.0f}'
+        },
+        tooltip: {
+            pointFormat: '小时： <b>{point.y}/h</b><br>' +
+            '页面大小: <b> {point.z} </b><br>'
+        },
+        
+        colorByPoint: true
+    }]
+});
+</script>
+</body>
+</html>

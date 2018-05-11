@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://img.hcharts.cn/highcharts/highcharts-3d.js"></script>
+<title>操作系统分析</title>
+</head>
+<body>
+<br><br><br><br>
+      <div id="container" style="min-width:500px;height:650px"></div>
+        <button id="plain">普通</button>
+        <button id="inverted">反转</button>
+        <button id="polar">极地图</button>
+
+        <script>
+		
+        $(function () {
+            var chart = Highcharts.chart('container', {
+                title: {
+                    text: '操作系统分析'
+                },
+                subtitle: {
+                    text: '2018-04-14'
+                },
+                xAxis: {
+                    categories: ['Android', 'Ubuntu', 'Windows']
+                },
+                series: [{
+                    type: 'column',
+                    colorByPoint: true,
+                    data: [686, 1264, 993],
+                    showInLegend: false
+                }]
+            });
+            $('#plain').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: false,
+                        polar: false
+                    },
+                    subtitle: {
+                        text: '普通的'
+                    }
+                });
+            });
+            $('#inverted').click(function () {
+                // chart.update 支持全部属性动态更新
+                chart.update({
+                    chart: {
+                        inverted: true,
+                        polar: false
+                    },
+                    subtitle: {
+                        text: '反转'
+                    }
+                });
+            });
+            $('#polar').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: false,
+                        polar: true
+                    },
+                    subtitle: {
+                        text: '极地图'
+                    }
+                });
+            });
+        });
+
+        
+        </script>
+
+</body>
+</html>

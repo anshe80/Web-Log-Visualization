@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        
+        </style>
+        <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/variable-pie.js"></script>
+
+	 <script type="text/javascript" src="../resources/js/contants.js"></script>
+		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../resources/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../resources/css/style.min.css" rel="stylesheet">
+		<link href="../resources/css/dateRange.css" rel="stylesheet">
+		<link rel="stylesheet" href="../resources/css/layer.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/layer.ext.css" id="layui_layer_skinlayercss" style="">
+		<link rel="stylesheet" href="../resources/css/style.css" id="layui_layer_skinlayercss" style="">
+<title>网页大小分析</title>
+</head>
+<body class="gray-bg">
+<br>
+<div class="wrapper wrapper-content">
+        <div class="row">
+        
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最大数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_total_users">1637719</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小平均数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">364078.3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">今日</span>
+                        <h5>网页大小最小数</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="browser_active_members">33109</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+</div>
+<div id="container" style="min-width:900px;height:900px"></div>
+
+
+	<script>
+	$(function () {
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'column'
+	        },
+	        title: {
+	            text: '用户某时间浏览网页大小热门分析'
+	        },
+	        subtitle: {
+	            text: '数据来源:192.168.211.154'
+	        },
+	        xAxis: {
+	            type: 'category',
+	            labels: {
+	                rotation: -45,
+	                style: {
+	                    fontSize: '13px',
+	                    fontFamily: 'Verdana, sans-serif'
+	                }
+	            }
+	        },
+	        yAxis: {
+	            min: 0,
+	            title: {
+	                text: '页面率'
+	            }
+	        },
+	        legend: {
+	            enabled: false
+	        },
+	        tooltip: {
+	            pointFormat: '页面大小: <b>{point.y:.1f} </b>'
+	        },
+	        series: [{
+	            name: '页面大小',
+	            data: [
+	                ['12:19:48', 1637719],
+	                ['12:32:16', 1368168],
+	                ['12:31:53', 1353921],
+	                ['12:19:49', 1047163],
+	                ['12:20:01', 999506],
+	                ['12:21:00', 903699],
+	                ['12:32:04', 829975],
+	                ['12:33:13', 498702],
+	                ['12:31:46', 492203],
+	                ['12:32:12', 385881],
+	                ['12:34:37', 357762],
+	                ['12:21:47', 152489],
+	                ['12:25:10', 126657],
+	                ['12:19:47', 107283],
+	                ['12:31:37', 71253],
+	                ['12:31:41', 68794],
+	                ['12:21:46', 65018],
+	                ['12:25:08', 40105],
+	                ['12:25:09', 36474],
+	                ['12:26:09', 35443],
+	                ['22:28:41', 35428],
+	                ['12:33:01', 34794],
+	                ['12:32:43', 34793],
+	                ['12:32:35', 34780],
+	                ['22:28:27', 34770],
+	                ['22:29:18', 34770],
+	                ['12:25:49', 34671],
+	                ['22:28:33', 33891],
+	                ['12:25:55', 33127],
+	                ['16:10:47', 33109]
+	            ],
+	            dataLabels: {
+	                enabled: true,
+	                rotation: -90,
+	                color: '#FFFFFF',
+	                align: 'right',
+	                format: '{point.y:.1f}', // one decimal
+	                y: 10, // 10 pixels down from the top
+	                style: {
+	                    fontSize: '13px',
+	                    fontFamily: 'Verdana, sans-serif'
+	                }
+	            }
+	        }]
+	    });
+	});
+
+	
+	</script>
+
+</body>
+</html>
